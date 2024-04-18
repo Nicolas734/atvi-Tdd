@@ -6,8 +6,6 @@ sys.path.insert(0, os.path.join(head, 'src'))
 sys.path.insert(1, os.path.join(head, 'tests'))
 
 
-
-
 import pytest
 from src.funcionarios import Funcionario, Cargo
 

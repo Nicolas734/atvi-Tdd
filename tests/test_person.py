@@ -38,7 +38,14 @@ def test_save_valid_person(valid_person, valid_email):
     assert len(dao.persons) == 1
 
 
-def test_save_invalid_person(invalid_person):
+def test_save_person_without_emails(invalid_person, invalid_email):
+    dao = PersonDAO()
+    dao.save(invalid_person)
+    assert len(dao.persons) == 0
+
+
+def test_save_person_with_invalid_email(invalid_person, invalid_email):
+    invalid_person.emails.append(invalid_email)
     dao = PersonDAO()
     dao.save(invalid_person)
     assert len(dao.persons) == 0

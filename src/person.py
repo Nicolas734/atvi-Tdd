@@ -37,7 +37,6 @@ class PersonDAO:
         for email in person.emails:
             if not self.is_email_valid(email.name):
                 erros.append("Email é invalido, deve esta no formato _____@____._____")
-        print(erros)
         return erros
 
 
